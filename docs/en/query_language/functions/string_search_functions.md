@@ -9,11 +9,82 @@ Returns the position (in bytes) of the found substring, starting from 1, or retu
 
 For a case-insensitive search, use the function `positionCaseInsensitive`.
 
-## positionUTF8(haystack, needle)
+## positionUTF8
 
-The same as `position`, but the position is returned in Unicode code points. Works under the assumption that the string contains a set of bytes representing a UTF-8 encoded text. If this assumption is not met, it returns some result (it doesn't throw an exception).
+Search for the substring `needle` in the string `haystack`. 
 
-For a case-insensitive search, use the function `positionCaseInsensitiveUTF8`.
+```sql
+SELECT positionUTF8('haystack', 'needle')
+```
+
+**Parameters**
+
+- `haystack` — The string in which to locate the substring. [String](../syntax.md#syntax-string-literal).
+- `needle` — The substring to locate. [String](../syntax.md#syntax-string-literal). 
+
+**Returned value**
+
+If the string contains a set of bytes representing a UTF-encoded text, `positionUTF8` returns:
+
+- The position of the found substring in Unicode code points.
+- `0`, if the substring was not found.
+
+If the string does not contain a set of bytes representing a UTF-encoded text, `positionUTF8` returns some result and does not throw an exception.
+
+**Example**
+
+Query:
+
+```sql
+SELECT positionUTF8('Мы делаем новости', 'новости')
+```
+Result:
+
+```sql
+┌─positionUTF8('Мы делаем новости', 'новости')─┐
+│                                           11 │
+└──────────────────────────────────────────────┘
+```
+**See also**
+
+For a case-insensitive search, use the function [positionCaseInsensitiveUTF8](#positionCaseInsensitiveUTF8).
+
+## positionCaseInsensitiveUTF8 {#positionCaseInsensitiveUTF8}
+
+Search for the substring `needle` in the string `haystack`. Unlike `positionUTF8`, `positionCaseInsensitiveUTF8` is case-insensitive. 
+
+```sql
+SELECT positionCaseInsensitiveUTF8('haystack', 'needle')
+```
+
+**Parameters**
+
+- `haystack` — The string in which to locate the substring. [String](../syntax.md#syntax-string-literal).
+- `needle` — The substring to locate. [String](../syntax.md#syntax-string-literal). 
+
+**Returned value**
+
+If the string contains a set of bytes representing a UTF-encoded text, `positionCaseInsensitiveUTF8` returns:
+
+- The position of the found substring in Unicode code points.
+- `0`, if the substring was not found.
+
+If the string does not contain a set of bytes representing a UTF-encoded text, `positionCaseInsensitiveUTF8` returns some result and does not throw an exception.
+
+**Example**
+
+Query:
+
+```sql
+SELECT positionCaseInsensitiveUTF8('МЫ ДЕЛАЕМ НОВОСТИ', 'новости')
+```
+Result:
+
+```sql
+┌─positionCaseInsensitiveUTF8('МЫ ДЕЛАЕМ НОВОСТИ', 'новости')─┐
+│                                                          11 │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ## multiSearchAllPositions(haystack, [needle<sub>1</sub>, needle<sub>2</sub>, ..., needle<sub>n</sub>])
 
