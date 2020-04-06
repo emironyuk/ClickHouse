@@ -984,7 +984,7 @@ Result:
 
 ## arrayZip {#arrayzip}
 
-Combines multiple Array type columns into a single Array type column. The column returned contains the corresponding elements of the source columns grouped into tuples in the listed order of arguments.
+Combines multiple arrays into a single array. The resulting array contains the corresponding elements of the source arrays grouped into tuples in the listed order of arguments.
 
 **Syntax**
 
@@ -994,11 +994,11 @@ arrayZip(arr1, arr2, ..., arrN)
 
 **Parameters**
 
-- `arr` — Any number of columns to combine. [Array](../../data_types/array.md).
+- `arrN` — [Array](../../data_types/array.md).
 
 **Returned value**
 
-- Single column with elements from the source columns grouped into [tuples](../../data_types/tuple.md).
+- Array with elements from the source arrays grouped into [tuples](../../data_types/tuple.md).
 
 Type: [Array](../../data_types/array.md).
 
