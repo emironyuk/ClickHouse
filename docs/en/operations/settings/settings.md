@@ -568,23 +568,23 @@ The default is slightly more than `max_block_size`. The reason for this is becau
 
 Sets minimum block size in rows to pass to the `INSERT` query. Smaller-sized blocks are squashed into one.
 
-**Possible values**
+Possible values:
 
 - Positive integer.
-- `0` — Squashing disabled.
+- 0 — Squashing disabled.
 
-Default value: `1048576`.
+Default value: 1048576.
 
 ## min_insert_block_size_bytes {#min-insert-block-size-bytes}
 
 Sets minimum block size in bytes to pass to the `INSERT` query. Smaller-sized blocks are squashed into one.
 
-**Possible values**
+Possible values:
 
 - Positive integer.
-- `0` — Squashing disabled.
+- 0 — Squashing disabled.
 
-Default value: `268435456`.
+Default value: 268435456.
 
 ## max\_replica\_delay\_for\_distributed\_queries {#settings-max_replica_delay_for_distributed_queries}
 
