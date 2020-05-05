@@ -230,8 +230,6 @@ SELECT JSONExtractArrayRaw('{"a": "hello", "b": [-100, 200.0, "hello"]}', 'b') =
 
 Extracts raw data from a JSON object.
 
-Returns an empty array if the object does not exist.
-
 **Syntax**
 
 ``` sql
@@ -245,9 +243,10 @@ JSONExtractKeysAndValuesRaw(json[, path])
 
 **Returned values**
 
-- Key-value pairs grouped into [tuples](../data-types/tuple.md). Each value is represented as an unparsed string.
+- Array with key-value pairs grouped into [tuples](../data-types/tuple.md). Each value is represented as an unparsed string.
+- Empty array if the object does not exist.
 
-  Type: [Array](../data-types/array.md).
+Type: [Array](../data-types/array.md).
 
 **Examples**
 
