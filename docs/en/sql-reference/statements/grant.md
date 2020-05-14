@@ -24,7 +24,7 @@ GRANT [ON CLUSTER cluster_name] privilege[(column_name [,...])] [,...] ON {db.ta
 The `WITH GRANT OPTION` clause grants `user` or `role` with permission to execute the `GRANT` query. Users can grant privileges of the same scope they have and less.
 
 
-## Granting Role Syntax {#assign-role-syntax}
+## Assigning Role Syntax {#assign-role-syntax}
 
 ```sql
 GRANT [ON CLUSTER cluster_name] role [,...] TO {user | another_role | CURRENT_USER} [,...] [WITH ADMIN OPTION]
@@ -53,9 +53,9 @@ It means that `john` has the permission to execute:
 
 `john` can't execute `SELECT z FROM db.table`. The `SELECT * FROM db.table` also is not available. Processing this query, ClickHouse doesn't return any data, even `x` and `y`. The only exception is if a table contains only `x` and `y` columns. In this case ClickHouse returns all the data.
 
-Also `john` has the `GRANT OPTION` privilege, so it can grant other users with privileges of the same or the smaller scope.
+Also `john` has the `GRANT OPTION` privilege, so it can grant other users with privileges of the same or smaller scope.
 
-Specifying privileges you can use asterisk (`*`) instead of a table or a database name. For example, the `GRANT SELECT ON db.* TO john` query allows `john` to execute the `SELECT` query over all the tables in `db` database. Also, you can omit database name. In this case privileges are granted for current database, for example: `GRANT SELECT ON * TO john` grants the privilege on all the tables in the current database, `GRANT SELECT ON mytable TO john` grants the privilege on the `mytable` table in the current database.
+Specifying privileges you can use asterisk (`*`) instead of a table or a database name. For example, the `GRANT SELECT ON db.* TO john` query allows `john` to execute the `SELECT` query over all the tables in `db` database. Also, you can omit database name. In this case privileges are granted for current database. For example, `GRANT SELECT ON * TO john` grants the privilege on all the tables in the current database, `GRANT SELECT ON mytable TO john` grants the privilege on the `mytable` table in the current database.
 
 Access to the `system` database is always allowed (since this database is used for processing queries).
 
@@ -212,7 +212,7 @@ The special privilege [ALL](#grant-all) grants all the privileges to a user acco
 
 By default, a user account or a role has no privileges.
 
-If a user or role has no privileges it displayed as [NONE](#grant-none) privilege.
+If a user or a role has no privileges, it is displayed as [NONE](#grant-none) privilege.
 
 Some queries by their implementation require a set of privileges. For example, to execute the [RENAME](misc.md#misc_operations-rename) query you need the following privileges: `SELECT`, `CREATE TABLE`, `INSERT` and `DROP TABLE`.
 
@@ -294,7 +294,7 @@ Examples of how this hierarchy is treated:
 
 **Notes**
 
-- The `MODIFY SETTING` privilege allows to modify table engine settings. It doesn't affect settings or server configuration parameters.
+- The `MODIFY SETTING` privilege allows modifying table engine settings. It doesn't affect settings or server configuration parameters.
 - The `ATTACH` operation needs the [CREATE](#grant-create) privilege.
 - The `DETACH` operation needs the [DROP](#grant-drop) privilege.
 - To stop mutation by the [KILL MUTATION](misc.md#kill-mutation) query, you need to have a privilege to start this mutation. For example, if you want to stop the `ALTER UPDATE` query, you need the `ALTER UPDATE`, `ALTER TABLE`, or `ALTER` privilege.
@@ -333,7 +333,7 @@ Privilege level: `TABLE`.
 
 ### OPTIMIZE {#grant-optimize}
 
-Allows executing the [OPTIMIZE TABLE](misc.md#misc_operations-optimize) queries.
+Allows executing [OPTIMIZE TABLE](misc.md#misc_operations-optimize) queries.
 
 Privilege level: `TABLE`.
 
@@ -354,7 +354,7 @@ A user has the `SHOW` privilege if it has any other privilege concerning the spe
 
 ### KILL QUERY {#grant-kill-query}
 
-Allows executing the [KILL](misc.md#kill-query-statement) queries according to the following hierarchy of privileges:
+Allows executing [KILL](misc.md#kill-query-statement) queries according to the following hierarchy of privileges:
 
 Privilege level: `GLOBAL`.
 
@@ -395,7 +395,7 @@ The `ROLE ADMIN` privilege allows a user to assign and revoke any roles includin
 
 ### SYSTEM {#grant-system}
 
-Allows a user to execute the [SYSTEM](system.md) queries according to the following hierarchy of privileges.
+Allows a user to execute [SYSTEM](system.md) queries according to the following hierarchy of privileges.
 
 - `SYSTEM`. Level: `GROUP`
     - `SYSTEM SHUTDOWN`. Level: `GLOBAL`. Aliases: `SYSTEM KILL`, `SHUTDOWN`

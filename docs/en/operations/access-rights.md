@@ -93,7 +93,7 @@ Management queries:
 - [SET DEFAULT ROLE](../sql-reference/statements/misc.md#set-default-role-statement)
 - [SHOW CREATE ROLE](../sql-reference/statements/show.md#show-create-role-statement)
 
-Privileges to a role can be granted by the [GRANT](../sql-reference/statements/grant.md) query. To revoke privileges from a role ClickHouse provides the [REVOKE](../sql-reference/statements/revoke.md) query.
+Privileges can be granted to a role by the [GRANT](../sql-reference/statements/grant.md) query. To revoke privileges from a role ClickHouse provides the [REVOKE](../sql-reference/statements/revoke.md) query.
 
 ## Row Policy {#row-policy-management}
 

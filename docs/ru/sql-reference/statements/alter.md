@@ -523,7 +523,7 @@ ALTER USER [IF EXISTS] name [ON CLUSTER cluster_name]
 
 ### Примеры {#alter-user-examples}
 
-Установить назначенные роли ролями по умолчанию:
+Установить ролями по умолчанию роли, назначенные пользователю:
 
 ``` sql
 ALTER USER user DEFAULT ROLE role1, role2
@@ -531,7 +531,7 @@ ALTER USER user DEFAULT ROLE role1, role2
 
 Если роли не были назначены пользователю, ClickHouse кидает исключение.
 
-Установить все назначенные роли ролями по умолчанию:
+Установить ролями по умолчанию все роли, назначенные пользователю:
 
 ``` sql
 ALTER USER user DEFAULT ROLE ALL
@@ -539,7 +539,7 @@ ALTER USER user DEFAULT ROLE ALL
 
 Если роль будет впоследствии назначена пользователю, она автоматически станет ролью по умолчанию.
 
-Установить все назначенные роли ролями по умолчанию кроме `role1` и `role2`:
+Установить ролями по умолчанию все назначенные пользователю роли кроме `role1` и `role2`:
 
 ``` sql
 ALTER USER user DEFAULT ROLE ALL EXCEPT role1, role2

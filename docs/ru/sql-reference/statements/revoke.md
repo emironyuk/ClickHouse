@@ -1,8 +1,3 @@
----
-toc_priority: 40
-toc_title: REVOKE
----
-
 # REVOKE
 
 Отзывает привилегии у пользователей или ролей.
@@ -23,7 +18,7 @@ REVOKE [ON CLUSTER cluster_name] [ADMIN OPTION FOR] role [,...] FROM {user | rol
 
 ## Описание {#revoke-description}
 
-Для отзыва привилегий можно использовать привилегию более высокого уровня. Например, если у пользователя есть привилегия `SELECT (x,y)`, администратор может отозвать ее с помощью одного из запросов: `REVOKE SELECT(x,y) ...`, `REVOKE SELECT * ...` или даже `REVOKE ALL PRIVILEGES ...`.
+Для отзыва привилегий можно использовать привилегию более широкой области действия. Например, если у пользователя есть привилегия `SELECT (x,y)`, администратор может отозвать ее с помощью одного из запросов: `REVOKE SELECT(x,y) ...`, `REVOKE SELECT * ...` или даже `REVOKE ALL PRIVILEGES ...`.
 
 ### Частичный отзыв {#partial-revokes-dscr}
 
@@ -31,14 +26,14 @@ REVOKE [ON CLUSTER cluster_name] [ADMIN OPTION FOR] role [,...] FROM {user | rol
 
 ## Примеры {#revoke-example}
 
-Присвоение пользователю `john` привилегии на `SELECT` из всех баз данных кроме `accounts`:
+Присвоить пользователю `john` привилегию на `SELECT` из всех баз данных кроме `accounts`:
 
 ``` sql
 GRANT SELECT ON *.* TO john;
 REVOKE SELECT ON accounts.* FROM john;
 ```
 
-Присвоение пользователю `mira` привилегии на `SELECT` из всех столбцов таблицы `accounts.staff` кроме столбца `wage`:
+Присвоить пользователю `mira` привилегию на `SELECT` из всех столбцов таблицы `accounts.staff` кроме столбца `wage`:
 
 ``` sql
 GRANT SELECT ON accounts.staff TO mira;
