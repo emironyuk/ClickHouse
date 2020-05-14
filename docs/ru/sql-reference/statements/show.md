@@ -127,7 +127,7 @@ SHOW CREATE USER [name | CURRENT_USER]
 
 ## SHOW CREATE ROLE {#show-create-role-statement}
 
-Выводит параметры, использованные при [создании роли](create.md#create-role-statement)
+Выводит параметры, использованные при [создании роли](create.md#create-role-statement).
 
 ### Синтаксис {#show-create-role-syntax}
 
@@ -139,7 +139,7 @@ SHOW CREATE ROLE name
 
 ## SHOW CREATE ROW POLICY {#show-create-row-policy-statement}
 
-Выводит параметры, использованные при [создании политики доступа к строкам](create.md#create-row-policy-statement)
+Выводит параметры, использованные при [создании политики доступа к строкам](create.md#create-row-policy-statement).
 
 ### Синтаксис {#show-create-row-policy-syntax}
 
@@ -150,7 +150,7 @@ SHOW CREATE [ROW] POLICY name ON [database.]table
 
 ## SHOW CREATE QUOTA {#show-create-quota-statement}
 
-Выводит параметры, использованные при [создании квоты](create.md#create-quota-statement)
+Выводит параметры, использованные при [создании квоты](create.md#create-quota-statement).
 
 ### Синтаксис {#show-create-row-policy-syntax}
 
@@ -161,7 +161,7 @@ SHOW CREATE QUOTA [name | CURRENT]
 
 ## SHOW CREATE SETTINGS PROFILE {#show-create-settings-profile-statement}
 
-Выводит параметры, использованные при [создании профиля настроек](create.md#create-settings-profile-statement)
+Выводит параметры, использованные при [создании профиля настроек](create.md#create-settings-profile-statement).
 
 ### Синтаксис {#show-create-row-policy-syntax}
 

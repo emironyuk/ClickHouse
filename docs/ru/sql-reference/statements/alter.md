@@ -577,7 +577,7 @@ ALTER [ROW] POLICY [IF EXISTS] name [ON CLUSTER cluster_name] ON [database.]tabl
 
 ## ALTER QUOTA {#alter-quota-statement}
 
-Изменяет квоты.
+Изменяет квоту.
 
 ### Синтаксис {#alter-quota-syntax}
 
