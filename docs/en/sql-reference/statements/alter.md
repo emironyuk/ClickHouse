@@ -534,7 +534,7 @@ Set all the granted roles to default:
 ALTER USER user DEFAULT ROLE ALL
 ```
 
-If a role will be granted to a user in the future it will become default automatically.
+If a role is granted to a user in the future, it will become default automatically.
 
 Set all the granted roles to default excepting `role1` and `role2`:
 
@@ -591,7 +591,7 @@ ALTER QUOTA [IF EXISTS] name [ON CLUSTER cluster_name]
 
 ## ALTER SETTINGS PROFILE {#alter-settings-profile-statement}
 
-Changes quotas.
+Changes settings profiles.
 
 ### Syntax {#alter-settings-profile-syntax}
 

@@ -327,14 +327,14 @@ There are multiple ways of user identification:
 
 #### User Host
 
-User host is a host from which a connection to ClickHouse server could be established. Host can be specified in the `HOST` section of query by the following ways:
+User host is a host from which a connection to ClickHouse server could be established. Host can be specified in the `HOST` section of query in the following ways:
 
 - `HOST IP 'ip_address_or_subnetwork'` — User can connect to ClickHouse server only from the specified IP address or a [subnetwork](https://en.wikipedia.org/wiki/Subnetwork). Examples: `HOST IP '192.168.0.0/16'`, `HOST IP '2001:DB8::/32'`. For use in production, only specify `HOST IP` elements (IP addresses and their masks), since using `host` and `host_regexp` might cause extra latency.
 - `HOST ANY` — User can connect from any location. This is default option.
 - `HOST LOCAL` — User can connect only locally.
 - `HOST NAME 'fqdn'` — User host can be specified as FQDN. For example, `HOST NAME 'mysite.com'`.
 - `HOST NAME REGEXP 'regexp'` — You can use [pcre](http://www.pcre.org/) regular expressions when specifying user hosts. For example, `HOST NAME REGEXP '.*\.mysite\.com'`.
-- `HOST LIKE 'template'` — Allows you use the [LIKE](../functions/string-search-functions.md#function-like) operator to filter the user hosts. For example, `HOST LIKE '%'` is equivalent to `HOST ANY`, `HOST LIKE '%.mysite.com'` filters all the hosts in the `mysite.com` domain.
+- `HOST LIKE 'template'` — Allows you to use the [LIKE](../functions/string-search-functions.md#function-like) operator to filter the user hosts. For example, `HOST LIKE '%'` is equivalent to `HOST ANY`, `HOST LIKE '%.mysite.com'` filters all the hosts in the `mysite.com` domain.
 
 Another way of specifying host is to use `@` syntax with the user name. Examples:
 
@@ -343,7 +343,7 @@ Another way of specifying host is to use `@` syntax with the user name. Examples
 - `CREATE USER mira@'192.168.%.%'` — Equivalent to the `HOST LIKE` syntax.
 
 !!! info "Warning"
-    ClickHouse treats `user_name@'address'` as a user name as a whole. Thus, technically you can create multiple users with `user_name` and different constructions after `@`. We don't recommend to do so.
+    ClickHouse treats `user_name@'address'` as a username as a whole. Thus, technically you can create multiple users with the same `user_name` and different constructions after `@`. However, We don't recommend to do so.
 
 
 ### Examples {#create-user-examples}
@@ -369,7 +369,7 @@ Create the user account `john` and make all his future roles default:
 ALTER USER user DEFAULT ROLE ALL
 ```
 
-When some role will be assigned to `john` in the future it will become default automatically.
+When some role is assigned to `john` in the future, it will become default automatically.
 
 Create the user account `john` and make all his future roles default excepting `role1` and `role2`:
 
@@ -443,15 +443,15 @@ Using this section you can create permissive or restrictive policies.
 
 Permissive policy grants access to rows. Permissive policies which apply to the same table are combined together using the boolean `OR` operator. Policies are permissive by default.
 
-Restrictive policy restricts access to row. Restrictive policies which apply to the same table are combined together using the boolean `AND` operator.
+Restrictive policy restricts access to rows. Restrictive policies which apply to the same table are combined together using the boolean `AND` operator.
 
 Restrictive policies apply to rows that passed the permissive filters. If you set restrictive policies but no permissive policies, the user can't get any row from the table.
 
 #### Section TO {#create-row-policy-to}
 
-In the section `TO` you can give a mixed list of roles and users, for example, `CREATE ROW POLICY ... TO accountant, john@localhost`.
+In the section `TO` you can provide a mixed list of roles and users, for example, `CREATE ROW POLICY ... TO accountant, john@localhost`.
 
-Keyword `ALL` means all the ClickHouse users including current user. Keywords `ALL EXCEPT` allow to to exclude some users from the all users list, for example `CREATE ROW POLICY ... TO ALL EXCEPT accountant, john@localhost`
+Keyword `ALL` means all the ClickHouse users including current user. Keywords `ALL EXCEPT` allow to to exclude some users from the all users list, for example, `CREATE ROW POLICY ... TO ALL EXCEPT accountant, john@localhost`
 
 ### Examples
 

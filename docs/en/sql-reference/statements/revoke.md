@@ -23,7 +23,7 @@ REVOKE [ON CLUSTER cluster_name] [ADMIN OPTION FOR] role [,...] FROM {user | rol
 
 ## Description {#revoke-description}
 
-To revoke some privilege you can use a privilege of wider scope then you plan to revoke. For example, if a user has the `SELECT (x,y)` privilege, administrator can perform `REVOKE SELECT(x,y) ...`, or `REVOKE SELECT * ...`, or even `REVOKE ALL PRIVILEGES ...` query to revoke this privilege.
+To revoke some privilege you can use a privilege of a wider scope than you plan to revoke. For example, if a user has the `SELECT (x,y)` privilege, administrator can perform `REVOKE SELECT(x,y) ...`, or `REVOKE SELECT * ...`, or even `REVOKE ALL PRIVILEGES ...` query to revoke this privilege.
 
 
 ### Partial Revokes {#partial-revokes-dscr}
