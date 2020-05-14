@@ -324,7 +324,7 @@ SET DEFAULT ROLE NONE TO user
 SET DEFAULT ROLE ALL EXCEPT role1, role2 TO user
 ```
 
-## TRUNCATE {#truncate}
+## TRUNCATE {#truncate-statement}
 
 ``` sql
 TRUNCATE TABLE [IF EXISTS] [db.]name [ON CLUSTER cluster]
