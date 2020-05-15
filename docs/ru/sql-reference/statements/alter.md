@@ -529,7 +529,7 @@ ALTER USER [IF EXISTS] name [ON CLUSTER cluster_name]
 ALTER USER user DEFAULT ROLE role1, role2
 ```
 
-Если роли не были назначены пользователю, ClickHouse кидает исключение.
+Если роли не были назначены пользователю, ClickHouse выбрасывает исключение.
 
 Установить ролями по умолчанию все роли, назначенные пользователю:
 
