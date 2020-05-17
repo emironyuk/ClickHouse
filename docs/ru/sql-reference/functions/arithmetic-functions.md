@@ -48,7 +48,7 @@ SELECT toTypeName(0), toTypeName(0 + 0), toTypeName(0 + 0 + 0), toTypeName(0 + 0
 
 Отличается от intDiv тем, что при делении на ноль или при делении минимального отрицательного числа на минус единицу, возвращается ноль.
 
-## modulo(a, b), оператор a % b {#moduloa-b-operator-a-b}
+## modulo(a, b), оператор a % b {#modulo}
 
 Вычисляет остаток от деления.
 Если аргументы - числа с плавающей запятой, то они предварительно преобразуются в целые числа, путём отбрасывания дробной части.
@@ -57,7 +57,7 @@ SELECT toTypeName(0), toTypeName(0 + 0), toTypeName(0 + 0 + 0), toTypeName(0 + 0
 
 ## moduloOrZero(a, b) {#modulo-or-zero}
 
-В отличие от `modulo`, возвращает ноль при делении на ноль.
+В отличие от [modulo](#modulo), возвращает ноль при делении на ноль.
 
 ## negate(a), оператор -a {#negatea-operator-a}
 

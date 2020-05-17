@@ -748,9 +748,9 @@ Path to temporary data for processing large queries.
 
 ## tmp_policy {#tmp-policy}
 
-Policy from [`storage_configuration`](../../engines/table-engines/mergetree-family/mergetree.md#table_engine-mergetree-multiple-volumes) to store temporary files.
+Policy from [storage_configuration](../../engines/table-engines/mergetree-family/mergetree.md#table_engine-mergetree-multiple-volumes) to store temporary files.
 
-If not set, [`tmp_path`](#tmp-path) is used, otherwise it is ignored.
+If not set, [tmp_path](#tmp-path) is used, otherwise it is ignored.
 
 !!! note "Note"
     - `move_factor` is ignored.

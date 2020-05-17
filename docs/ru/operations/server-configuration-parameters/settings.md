@@ -700,9 +700,9 @@ TCP порт для защищённого обмена данными с кли
 ```
 ## tmp_policy {#tmp-policy}
 
-Политика из [`storage_configuration`](../../engines/table-engines/mergetree-family/mergetree.md#table_engine-mergetree-multiple-volumes) для хранения временных файлов.
+Политика из [storage_configuration](../../engines/table-engines/mergetree-family/mergetree.md#table_engine-mergetree-multiple-volumes) для хранения временных файлов.
 
-Если политика не задана, используется [`tmp_path`](#tmp-path). В противном случае `tmp_path` игнорируется.
+Если политика не задана, используется [tmp_path](#tmp-path). В противном случае `tmp_path` игнорируется.
 
 !!! note "Примечание"
     - `move_factor` игнорируется.
