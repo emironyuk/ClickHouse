@@ -312,7 +312,7 @@ ALTER TABLE table2 REPLACE PARTITION partition_expr FROM table1
 ALTER TABLE table_source MOVE PARTITION partition_expr TO TABLE table_dest
 ```
 
-Перемещает партицию из таблицы `table_source` в таблицу `table_dest` (добавляет к существующим данным в `table_dest`), с удалением данных из таблицы `table_source`.
+Перемещает партицию из таблицы `table_source` в таблицу `table_dest` (добавляет к существующим данным в `table_dest`) с удалением данных из таблицы `table_source`.
 
 Следует иметь в виду:
 

@@ -55,7 +55,7 @@ SELECT toTypeName(0), toTypeName(0 + 0), toTypeName(0 + 0 + 0), toTypeName(0 + 0
 Берётся остаток в том же смысле, как это делается в C++. По факту, для отрицательных чисел, используется truncated division.
 При делении на ноль или при делении минимального отрицательного числа на минус единицу, кидается исключение.
 
-## moduloOrZero(a, b) {#moduloorzeroa-b}
+## moduloOrZero(a, b) {#modulo-or-zero}
 
 В отличие от `modulo`, возвращает ноль при делении на ноль.
 
