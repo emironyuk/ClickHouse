@@ -307,13 +307,13 @@ For the query to run successfully, the following conditions must be met:
 ALTER TABLE table_source MOVE PARTITION partition_expr TO TABLE table_dest
 ```
 
-This query move the data partition from the `table_source` to `table_dest` with deleting the data from `table_source`.
+This query moves the data partition from the `table_source` to `table_dest` with deleting the data from `table_source`.
 
 For the query to run successfully, the following conditions must be met:
 
 -   Both tables must have the same structure.
 -   Both tables must have the same partition key.
--   Both tables must be the same engine family. (replicated or non-replicated)
+-   Both tables must be the same engine family (replicated or non-replicated).
 -   Both tables must have the same storage policy.
 
 #### CLEAR COLUMN IN PARTITION {#alter_clear-column-partition}

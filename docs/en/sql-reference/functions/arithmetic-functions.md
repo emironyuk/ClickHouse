@@ -60,9 +60,9 @@ If arguments are floating-point numbers, they are pre-converted to integers by d
 The remainder is taken in the same sense as in C++. Truncated division is used for negative numbers.
 An exception is thrown when dividing by zero or when dividing a minimal negative number by minus one.
 
-## moduloOrZero(a, b) {#moduloorzeroa-b}
+## moduloOrZero(a, b) {#moduloorzero}
 
-Differs from ‘modulo’ in that it returns zero when the divisor is zero.
+Differs from `modulo` in that it returns zero when the divisor is zero.
 
 ## negate(a), -a operator {#negatea-a-operator}
 

@@ -1026,13 +1026,18 @@ Possible values:
 
 Default value: 0.
 
-## optimize\_skip\_unused\_shards {#settings-optimize_skip_unused_shards}
+## optimize_skip_unused_shards {#settings-optimize_skip_unused_shards}
 
-Enables or disables skipping of unused shards for SELECT queries that have sharding key condition in PREWHERE/WHERE (assumes that the data is distributed by sharding key, otherwise do nothing).
+Enables or disables skipping of unused shards for `SELECT` queries that have sharding key condition in `WHERE / PREWHERE` (assuming that the data is distributed by sharding key, otherwise does nothing).
+
+Possible values:
+
+-    0 — Disabled.
+-    1 — Enabled.
 
 Default value: 0
 
-## force\_optimize\_skip\_unused\_shards {#settings-force_optimize_skip_unused_shards}
+## force_optimize_skip_unused_shards {#settings-force_optimize_skip_unused_shards}
 
 Enables or disables query execution if [`optimize_skip_unused_shards`](#settings-optimize_skip_unused_shards) enabled and skipping of unused shards is not possible. If the skipping is not possible and the setting is enabled exception will be thrown.
 
