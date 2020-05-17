@@ -1025,27 +1025,28 @@ ClickHouse генерирует исключение
 
 Значение по умолчанию: 0.
 
-## optimize_skip_unused_shards {#settings-optimize_skip_unused_shards}
+## optimize_skip_unused_shards {#optimize-skip-unused-shards}
 
 Включает или отключает пропуск неиспользуемых шардов для запросов `SELECT`, в которых условие ключа шардирования задано в секции `WHERE / PREWHERE`. Предполагается, что данные распределены с помощью ключа шардирования, в противном случае настройка ничего не делает.
 
-Possible values:
+Возможные значения:
 
--    0 — Disabled.
--    1 — Enabled.
-Default value: 0
+-    0 — Выключена.
+-    1 — Включена.
 
-## force_optimize_skip_unused_shards {#settings-force_optimize_skip_unused_shards}
+Значение по умолчанию: 0
 
-Enables or disables query execution if [`optimize_skip_unused_shards`](#settings-optimize_skip_unused_shards) enabled and skipping of unused shards is not possible. If the skipping is not possible and the setting is enabled exception will be thrown.
+## force_optimize_skip_unused_shards {#force-optimize-skip-unused-shards}
 
-Possible values:
+Разрешает или запрещает выполнение запроса, если настройка [`optimize_skip_unused_shards`](#optimize-skip-unused-shards) включена, а пропуск неиспользуемых шардов невозможен. Если данная настройка включена и пропуск невозможен, ClickHouse генерирует исключение.
 
--   0 - Disabled (do not throws)
--   1 - Disable query execution only if the table has sharding key
--   2 - Disable query execution regardless sharding key is defined for the table
+Возможные значения:
 
-Default value: 0
+-   0 — Выключена. ClickHouse не генерирует исключение.
+-   1 — Включена. Выполнение запроса запрещается, только если у таблицы есть ключ шардирования.
+-   2 — Включена. Выполнение запроса запрещается, даже если для таблицы не определен ключ шардирования.
+
+Значение по умолчанию: 0
 
 ## optimize\_throw\_if\_noop {#setting-optimize_throw_if_noop}
 
